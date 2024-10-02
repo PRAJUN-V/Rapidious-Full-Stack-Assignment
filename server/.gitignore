@@ -1,0 +1,65 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.env
+
+# Django
+db.sqlite3
+/staticfiles/
+/mediafiles/
+
+# Virtual Environments
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+
+# Django migrations
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.coverage
+*.mypy_cache/
+*.pytest_cache/
+*.pdm_cache/
+__pycache__/
+*.env
+local_settings.py
+.vscode/
+.idea/
+
+# Ignore node_modules (if using frontend tools like npm/yarn in Django)
+node_modules/
+
+# macOS specific files
+.DS_Store
+
+# JetBrains IDEs
+.idea/
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+
+# Logs
+*.log
+
+# MyPy
+.mypy_cache/
+
+# Pytest
+.pytest_cache/
+
+# Other common generated files
+*.orig
