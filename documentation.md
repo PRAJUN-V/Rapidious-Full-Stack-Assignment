@@ -21,7 +21,7 @@ Backend
 - Created Virtual Environment named venv to manage all the python packages related to the project.
 - Installed Latest version of Django -> django-5.1.1
 - Created requirements.txt file.
-- Created a django project named RecipeSearch
-        -> django-admin startproject RecipeSearch .
+- Created a django project named server
+        -> django-admin startproject server .
 - Created .env file to store secret credentials.
         -> pip install python-dotenv
