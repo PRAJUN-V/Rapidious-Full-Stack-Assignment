@@ -1,7 +1,6 @@
 import os
 from dotenv import load_dotenv
 from pathlib import Path
-from opensearchpy import OpenSearch
 
 # Load environment variables from .env file
 load_dotenv()
@@ -43,6 +42,9 @@ INSTALLED_APPS = [
     # For changing username to email.
     'django_use_email_as_username.apps.DjangoUseEmailAsUsernameConfig',
     'custom_user.apps.CustomUserConfig',
+
+    # This app is for the purpose of using open search in this project.
+    'opensearch_util',
 ]
 
 AUTH_USER_MODEL = 'custom_user.User'
@@ -131,9 +133,6 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-OPENSEARCH_HOST = 'http://localhost:9200'  # or your OpenSearch instance URL
-OPENSEARCH_CLIENT = OpenSearch([OPENSEARCH_HOST])
-
 # CORS Configuration
 CORS_ALLOW_ALL_ORIGINS = True  # Allows all origins (adjust for production)
 # CORS_ALLOWED_ORIGINS = [
@@ -150,3 +149,11 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication',
     ],
 }
+
+# OpenSearch configurations
+OPENSEARCH_HOST = 'localhost'  # Use the appropriate host
+OPENSEARCH_PORT = 9200
+OPENSEARCH_USER = 'admin'  # Use the username you set in Docker Compose
+OPENSEARCH_PASSWORD = 'admin'  # Use the password you set in Docker Compose
+OPENSEARCH_USE_SSL = False  # Set to True if you enable SSL
+OPENSEARCH_VERIFY_CERTS = False  # Set to True in production with proper SSL setup

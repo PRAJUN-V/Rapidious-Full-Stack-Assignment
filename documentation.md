@@ -14,6 +14,8 @@ Created folder named client for managing frontend(React) of the application.
 Created folder named server for managing  backent(Django) of the application.
 
 Setup docker to setup open search and now it is running properly.
+        File location : desktop/opensearch/docker-compose.yml
+        -> docker compose up: This will start two OpenSearch nodes and OpenSearch Dashboards.
 
 Frontend
 - Installed Tailwind CSS for frontend design.
@@ -33,13 +35,15 @@ Backend
         -> pip install python-dotenv
 - Installed pandas to extract data from csv file downloaded from Kaggle.
         -> pip install pandas
-- Installed the OpenSearch Python Client: You can use the official OpenSearch Python client using pip.
-        -> pip install opensearch-py
-- Added OpenSearch Configuration in settings.py file.
 - Created a django app named test_app for testing purpose.
 - Django restframework setup.
         -> pip install djangorestframework django-cors-headers
 - Created custom user model to use email field instead of username field.
         -> pip install django-use-email-as-username
+- Created an app named opensearch_util for the purpose of using opensearch.
+- Installed the OpenSearch Python Client: You can use the official OpenSearch Python client using pip.
+        -> pip install opensearch-py
+- Added OpenSearch Configuration in settings.py file.
+- Created views and urls for opensearch and tested it(Working✔).
 
 OpenSearch

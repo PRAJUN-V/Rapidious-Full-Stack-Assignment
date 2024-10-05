@@ -1,0 +1,40 @@
+### Install rest client vs code extension to test this api. ###
+
+# Search Document
+GET http://localhost:8000/opensearch/api/search/?q=Dosa
+Content-Type: application/json
+
+###
+
+# Create Document
+POST http://localhost:8000/opensearch/api/documents/
+Content-Type: application/json
+
+{
+    "title": "Dosa",
+    "rating": 4.5,
+    "calories": 300,
+    "protein": 15,
+    "fat": 10,
+    "sodium": 150
+}
+
+###
+
+# Get all documents
+GET http://localhost:8000/opensearch/api/all/
+Content-Type: application/json
+
+###
+
+# update document
+PUT http://localhost:8000/opensearch/api/documents/update/2/
+
+{
+    "rating": 4.8
+}
+
+###
+
+# update document
+DELETE  http://localhost:8000/opensearch/api/documents/delete/YzT1W5IBwjRz4Egv1bpF/
