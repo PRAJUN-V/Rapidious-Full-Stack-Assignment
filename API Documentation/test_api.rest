@@ -1,0 +1,17 @@
+GET http://localhost:8000/api/items/
+Content-Type: application/json
+
+###
+
+POST http://localhost:8000/api/items/
+Content-Type: application/json
+
+{
+    "name": "Sample Item",
+    "description": "This is a sample description."
+}
+
+###
+
+GET http://localhost:8000/api/users/
+Content-Type: application/json
