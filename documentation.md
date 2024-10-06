@@ -27,9 +27,17 @@ Frontend
 - Created folder named 'home' to manage home page components.
 - For getting icons
         -> npm install lucide-react
-- npm install react-router-dom
 - Loading component is created.
 - 404 page not found component is created.
+- npm install axios jwt-decode react-router-dom
+- Created constants.js and api.js
+- Created an enviroment variable file .evn
+- Created a file named ProtectedRoute.jsx in components folder.
+- npm install react-router-dom formik yup @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons axios jwt-decode
+        -> for login page
+- In App.jsx routes related to this application is setup.
+- Login Page implemented.
+
 
 Backend
 - Created Virtual Environment named venv to manage all the python packages related to the project.
@@ -79,7 +87,7 @@ Backend
         MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
         pip install pillow
 
-        
+
 
 OpenSearch
 - Created index named epirecipes in opensearch and converted data from csv file to documents and add in that index

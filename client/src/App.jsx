@@ -1,19 +1,32 @@
-import Login from "./pages/auth/Login"
-import Header from "./pages/home/components/Header"
-import Loading from "./components/Loading"
-import NotFoundPage from "./pages/404/404"
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
+import ProtectedRoute from "./components/ProtectedRoute"
 import Home from "./pages/home/Home"
+import Login from './pages/auth/Login'
+
+function Logout() {
+  localStorage.clear()
+  return <Navigate to="/login" />
+}
+
+function RegisterAndLogout() {
+  localStorage.clear()
+  return <Register />
+}
 
 function App() {
 
+
   return (
-    <>
-      {/* <Login /> */}
-      {/* <Header /> */}
-      {/* <Loading /> */}
-      {/* <NotFoundPage /> */}
-      <Home />
-    </>
+    <BrowserRouter>
+      <Routes>
+        {/* General route : Anyone can access this page */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/logout" element={<Logout />} />
+        <Route path="/register" element={<RegisterAndLogout />} />
+        <Route path="/" element={<Home />} />
+
+      </Routes>
+    </BrowserRouter>
   )
 }
 
