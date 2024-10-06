@@ -2,11 +2,16 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from opensearchpy import OpenSearch
 import json
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from the .env file
+load_dotenv()
 
 # Connect to OpenSearch
-host = 'http://localhost:9200'
-username = 'admin'  # Replace with your OpenSearch username
-password = 'admin'  # Replace with your OpenSearch password
+host = os.getenv('OPENSEARCH_HOST')
+username = os.getenv('OPENSEARCH_USERNAME')
+password = os.getenv('OPENSEARCH_PASSWORD')
 client = OpenSearch(
     host,
     http_auth=(username, password),

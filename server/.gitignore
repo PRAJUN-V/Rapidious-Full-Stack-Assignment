@@ -63,3 +63,5 @@ coverage.xml
 
 # Other common generated files
 *.orig
+
+DataFromKaggle/

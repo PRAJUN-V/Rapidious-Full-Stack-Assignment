@@ -28,13 +28,13 @@ Content-Type: application/json
 ###
 
 # update document
-PUT http://localhost:8000/opensearch/api/documents/update/2/
+PUT http://localhost:8000/opensearch/api/documents/update/n6BMXJIBhP8BtnII8gpj/
 
 {
-    "rating": 4.8
+    "title" : "chappthi"
 }
 
 ###
 
 # update document
-DELETE  http://localhost:8000/opensearch/api/documents/delete/YzT1W5IBwjRz4Egv1bpF/
+DELETE  http://localhost:8000/opensearch/api/documents/delete/n6BMXJIBhP8BtnII8gpj/

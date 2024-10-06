@@ -16,11 +16,11 @@ Created folder named server for managing  backent(Django) of the application.
 Setup docker to setup open search and now it is running properly.
         File location : desktop/opensearch/docker-compose.yml
         -> docker compose up: This will start two OpenSearch nodes and OpenSearch Dashboards.
+        added docker-compose.yml file in docker folder in project directory.
 
 Frontend
 - Installed Tailwind CSS for frontend design.
         Reference -> https://tailwindcss.com/docs/guides/vite
-
 
 
 Backend
@@ -45,5 +45,9 @@ Backend
         -> pip install opensearch-py
 - Added OpenSearch Configuration in settings.py file.
 - Created views and urls for opensearch and tested it(Working✔).
+- csv file from kaggle where data is stored is saved in folder named DataFromKaggle in server directory.
+
 
 OpenSearch
+- Created index named epirecipes in opensearch and converted data from csv file to documents and add in that index
+- Retreival of data from opensearch is also tested ✔.
