@@ -9,6 +9,7 @@ npm version -> 10.8.3
 react version -> ^18.3.1
 
 Data: https://www.kaggle.com/datasets/hugodarwood/epirecipes
+Open Search Official Documentation : https://opensearch.org/docs/latest/about/
 
 Created folder named client for managing frontend(React) of the application.
 Created folder named server for managing  backent(Django) of the application.
@@ -21,6 +22,8 @@ Setup docker to setup open search and now it is running properly.
 Frontend
 - Installed Tailwind CSS for frontend design.
         Reference -> https://tailwindcss.com/docs/guides/vite
+- Created folders named components and pages in src.
+- Created Login component for the application in auth folder.
 
 
 Backend
@@ -51,3 +54,11 @@ Backend
 OpenSearch
 - Created index named epirecipes in opensearch and converted data from csv file to documents and add in that index
 - Retreival of data from opensearch is also tested ✔.
+- I have created a folder in main project directory named 'recipe_data_management' to manage all the resource related to append the data from csv file from kaggle to open search.
+- Also created a python virtual enviroment named virenv for this purpose.
+        -> pip install pandas numpy opensearch-py requests
+- File name import_recipes_to_opensearch.py is created and logic for importing data from csv to open search is added in it.
+- Security credentials related to open search are stored in .env file.
+        -> pip install python-dotenv
+- csv file from kaggle is renamed to recipes.csv and stored in 'recipe_data_management' folder.
+- Finally run the import_recipes_to_opensearch.py script it will create index named 'recipes' in the open search save the data from csv as documents in it.

@@ -26,3 +26,8 @@ Content-Type: application/json
     "first_name": "user",
     "last_name": "One"
 }
+
+### OpenSearch Cluster Health Check
+GET http://localhost:9200/_cluster/health
+Authorization: Basic admin:Str0ngP@ssw0rd!2024
+
