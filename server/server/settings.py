@@ -1,6 +1,7 @@
 import os
 from dotenv import load_dotenv
 from pathlib import Path
+from datetime import timedelta
 
 # Load environment variables from .env file
 load_dotenv()
@@ -45,6 +46,12 @@ INSTALLED_APPS = [
 
     # This app is for the purpose of using open search in this project.
     'opensearch_util',
+
+    # This app is for authentication purpose.
+    'accounts',
+
+    # For jwt authentication.
+    'rest_framework_simplejwt',
 ]
 
 AUTH_USER_MODEL = 'custom_user.User'
@@ -141,14 +148,25 @@ CORS_ALLOW_ALL_ORIGINS = True  # Allows all origins (adjust for production)
 
 # REST Framework Configuration
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny',  # Change as needed
-    ],
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.SessionAuthentication',
-        'rest_framework.authentication.BasicAuthentication',
-    ],
-}
+                'DEFAULT_AUTHENTICATION_CLASSES': (
+                'rest_framework_simplejwt.authentication.JWTAuthentication',
+                ),
+        }
+
+# SIMPLE_JWT = {
+#         'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
+#         'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+#         'ROTATE_REFRESH_TOKENS': True,
+#         'BLACKLIST_AFTER_ROTATION': True,
+#         'ALGORITHM': 'HS256',
+#         'SIGNING_KEY': SECRET_KEY,
+#         'VERIFYING_KEY': None,
+#         'AUTH_HEADER_TYPES': ('Bearer',),
+#         'USER_ID_FIELD': 'id',
+#         'USER_ID_CLAIM': 'user_id',
+#         'AUTH_TOKEN_CLASSES': ('access',),
+#         'AUTH_HEADER_TYPES': ('Bearer',),
+#         }
 
 # OpenSearch configurations
 OPENSEARCH_HOST = 'localhost'  # Use the appropriate host
@@ -157,3 +175,6 @@ OPENSEARCH_USER = 'admin'  # Use the username you set in Docker Compose
 OPENSEARCH_PASSWORD = 'admin'  # Use the password you set in Docker Compose
 OPENSEARCH_USE_SSL = False  # Set to True if you enable SSL
 OPENSEARCH_VERIFY_CERTS = False  # Set to True in production with proper SSL setup
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

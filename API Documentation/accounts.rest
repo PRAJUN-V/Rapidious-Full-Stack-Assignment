@@ -1,0 +1,38 @@
+### Install rest client vs code extension to test this api. ###
+
+# API for registration
+POST http://127.0.0.1:8000/api/account/register/
+Content-Type: application/json
+
+{
+    "password": "Admin2@123", 
+    "email": "admin2@yopmail.com", 
+    "profile": {"role": "admin"}
+}
+
+###
+
+#  API to get token if we give correct credientials
+POST http://127.0.0.1:8000/api/account/token/
+Content-Type: application/json
+
+{
+    "email": "admin2@yopmail.com",
+    "password": "Admin2@123"
+}
+
+###
+
+#  API to get new access token when I give refresh token
+POST http://127.0.0.1:8000/api/account/token/refresh/
+Content-Type: application/json
+
+{
+    "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcyODMxNjIzMiwiaWF0IjoxNzI4MjI5ODMyLCJqdGkiOiI0MTRmNTY5YjZmMTA0NDgzODU2YWU5NzE5MDM2M2FiMSIsInVzZXJfaWQiOjcsImlkIjo3LCJyb2xlIjoiYWRtaW4iLCJpc19hY3RpdmUiOnRydWV9.I7o8eUKh7SaXTMZn5cbYBbsm1oeRUSSsYLXjk38w1Yw"
+}
+
+###
+
+GET http://127.0.0.1:8000/api/account/user-status/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI4MjMwMjQ0LCJpYXQiOjE3MjgyMjk4MzIsImp0aSI6ImRmZTFmNTU3NTE4ODQzZWQ5MWU2MDRhNjc2N2ExOGUxIiwidXNlcl9pZCI6NywiaWQiOjcsInJvbGUiOiJhZG1pbiIsImlzX2FjdGl2ZSI6dHJ1ZX0.R_dT3JE6b9gT2c6YywM0hR72r0RBPqhVlL_B7bpO4BU
+Content-Type: application/json

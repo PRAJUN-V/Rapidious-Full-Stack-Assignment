@@ -54,7 +54,32 @@ Backend
 - Added OpenSearch Configuration in settings.py file.
 - Created views and urls for opensearch and tested it(Working✔).
 - csv file from kaggle where data is stored is saved in folder named DataFromKaggle in server directory.
+- Creating a app named accounts from authentication purpose like registration, login ...etc.
+- Created a file named accounts.rest in API Documentation for testing api's related to authentication.
+- Created a model named profile to include additional details about user which is one to one relation with user model.
+- Created a file named signals.py create profile automatically when user is created with same id as user.
+        -> Now a profile is created related with user whenever a new user is created.
+- Created custom token obtain pair view to include profile role and user is_active in token.
+- Modified User Serializer in accounts so that role in profile can be also included in it during registration.
+- Created UserStatusSerializer in accounts.serializer to check user is active or not in frontend.
+        -> Created view and url for this.
+- Now the protected route in frontend is checking each time from backend whether is user is active or not.
+- To use image field in django.
+        -> pip install Pillow
+- Created serializer in accounts app for custom User.
+        Created UserSerializer
+- Created a generic view for creating user.
+- For jwt authentication
+        -> pip install djangorestframework-simplejwt
+- Registration api is tested and it is working properly.
+- API for getting token using credential is tested and working properly.
+- registration, get_token, refresh token is working properly in backend.
+- Set up media in backent to save images for now I will use s3 bucket at the time of deloyment
+        MEDIA_URL = '/media/'
+        MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+        pip install pillow
 
+        
 
 OpenSearch
 - Created index named epirecipes in opensearch and converted data from csv file to documents and add in that index
