@@ -1,9 +1,8 @@
 import pandas as pd
-import numpy as np
 import os
 from opensearchpy import OpenSearch, RequestsHttpConnection
 from dotenv import load_dotenv
-import time  # Import the time module
+import time
 
 # Load environment variables from .env file
 load_dotenv()
@@ -80,7 +79,7 @@ def index_data_to_opensearch(data, index_name):
 start_time = time.time()
 
 # Call the function to index the transformed data
-index_data_to_opensearch(recipes_json, 'recipes')
+index_data_to_opensearch(recipes_json, 'epirecipes')
 
 # Calculate elapsed time
 elapsed_time = time.time() - start_time

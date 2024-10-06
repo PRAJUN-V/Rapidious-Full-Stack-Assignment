@@ -24,7 +24,12 @@ Frontend
         Reference -> https://tailwindcss.com/docs/guides/vite
 - Created folders named components and pages in src.
 - Created Login component for the application in auth folder.
-
+- Created folder named 'home' to manage home page components.
+- For getting icons
+        -> npm install lucide-react
+- npm install react-router-dom
+- Loading component is created.
+- 404 page not found component is created.
 
 Backend
 - Created Virtual Environment named venv to manage all the python packages related to the project.
