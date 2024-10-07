@@ -42,7 +42,7 @@ Frontend
 - Created a folder named user in pages to manage pages related to users.
 - Created a folder named recipe-search in pages to save all the components related to that.
 - Created Dashboard for searching purpose.
-- Added searching, filteration and recipe card.
+- Added searching, filteration and recipe card
 
 Backend
 - Created Virtual Environment named venv to manage all the python packages related to the project.
@@ -91,6 +91,11 @@ Backend
         MEDIA_URL = '/media/'
         MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
         pip install pillow
+- Created a app named recipes for implementing open search functionlity on recipe on django
+        -> python manage.py startapp recipes
+- Create Views in recipes/views.py: Implement API endpoints to interact with OpenSearch.
+- Created recipes.rest to test api endpoints.
+- Created a serializer in accounts app for profile details update.
 
 
 
@@ -105,3 +110,35 @@ OpenSearch
         -> pip install python-dotenv
 - csv file from kaggle is renamed to recipes.csv and stored in 'recipe_data_management' folder.
 - Finally run the import_recipes_to_opensearch.py script it will create index named 'recipes' in the open search save the data from csv as documents in it.
+- Mapping for indexing used in this project. 
+        mapping = {
+        "mappings": {
+            "properties": {
+                "title": {
+                    "type": "text",  # For full-text search
+                    "analyzer": "standard"
+                },
+                "ingredients": {
+                    "type": "text"  # Also for full-text search
+                },
+                "directions": {
+                    "type": "text"
+                },
+                "calories": {
+                    "type": "float"  # Numeric type for aggregation and filtering
+                },
+                "protein": {
+                    "type": "float"
+                },
+                "fat": {
+                    "type": "float"
+                },
+                "date": {
+                    "type": "date"  # Date type for time-based queries
+                },
+                "categories": {
+                    "type": "keyword"  # For exact matches (e.g., filtering)
+                }
+            }
+        }}
+    

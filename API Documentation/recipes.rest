@@ -1,0 +1,27 @@
+GET http://localhost:8000/api/recipes/search/?query=cake&size=10&page=3
+Content-Type: application/json
+### 
+
+GET http://localhost:8000/api/recipes/category/?category=Vegetable&page=1
+Content-Type: application/json
+
+###
+
+GET http://localhost:8000/api/recipes/search-and-filter/?query=&filters=&size=10&page=1000
+
+Content-Type: application/json
+
+# case 1:
+# When Both Search Query and Filter are Empty:
+# GET /api/recipes/search-and-filter/?query=&filter=&size=10&page=1
+# Response: Returns the first 10 recipes from the entire dataset.
+
+# case 2:
+# When Search Query is Empty but Filter is Provided:
+# GET /api/recipes/search-and-filter/?query=&filter=Dessert&size=10&page=1
+# Response: Returns the first 10 recipes in the "Dessert" category.
+
+# case 3:
+# When Search Query is Provided:
+# GET /api/recipes/search-and-filter/?query=&filters=Dessert,Vegetarian&size=10&page=1
+# Response: Returns recipes belonging to "Dessert" and "Vegetarian" categories without any search query.

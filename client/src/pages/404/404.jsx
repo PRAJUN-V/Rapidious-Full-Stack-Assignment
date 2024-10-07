@@ -4,11 +4,11 @@ import notFoundImage from '../../assets/images/404-image.png'; // Replace with y
 import Header from '../home/components/Header'; // Import your Header component
 
 const NotFoundPage = () => {
-    //   const navigate = useNavigate(); // Using useNavigate from React Router v6
+      const navigate = useNavigate(); // Using useNavigate from React Router v6
 
-    //   const handleGoHome = () => {
-    //     navigate('/'); // Navigate back to home
-    //   };
+      const handleGoHome = () => {
+        navigate('/'); // Navigate back to home
+      };
 
     return (
         <div className="flex flex-col h-screen bg-white">
@@ -29,7 +29,7 @@ const NotFoundPage = () => {
                     <br />
                     <br />
                     <button
-                        // onClick={handleGoHome} // Added the onClick handler to navigate home
+                        onClick={handleGoHome} // Added the onClick handler to navigate home
                         className="bg-transparent hover:bg-[#5B3A29] text-[#5B3A29] font-semibold hover:text-white py-2 px-4 border border-[#5B3A29] hover:border-transparent rounded"
                     >
                         Go Back to Home

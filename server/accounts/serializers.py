@@ -46,3 +46,37 @@ class UserStatusSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ["is_active", "profile"]
+
+class ProfileUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Profile
+        fields = ["role", "image"]
+
+class UserUpdateSerializer(serializers.ModelSerializer):
+    profile = ProfileUpdateSerializer(required=False)
+    first_name = serializers.CharField(required=False, allow_blank=True)
+    last_name = serializers.CharField(required=False, allow_blank=True)
+    password = serializers.CharField(write_only=True, required=False, allow_blank=True)
+
+    class Meta:
+        model = User
+        fields = ["first_name", "last_name", "password", "profile"]
+
+    def update(self, instance, validated_data):
+        # Update user's first and last names
+        instance.first_name = validated_data.get('first_name', instance.first_name)
+        instance.last_name = validated_data.get('last_name', instance.last_name)
+
+        # Update password if provided
+        password = validated_data.get('password', None)
+        if password:
+            instance.set_password(password)
+
+        instance.save()
+
+        # Update or create profile data if provided
+        profile_data = validated_data.get('profile', None)
+        if profile_data:
+            Profile.objects.update_or_create(user=instance, defaults=profile_data)
+
+        return instance

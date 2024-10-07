@@ -4,6 +4,7 @@ import Home from "./pages/home/Home"
 import Login from './pages/auth/Login'
 import Register from "./pages/auth/Register"
 import Favorite from "./pages/user/Favorite"
+import NotFoundPage from "./pages/404/404"
 
 function Logout() {
   localStorage.clear()
@@ -22,6 +23,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/* General route : Anyone can access this page */}
+        <Route path="*" element={<NotFoundPage />}></Route>
         <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/register" element={<RegisterAndLogout />} />

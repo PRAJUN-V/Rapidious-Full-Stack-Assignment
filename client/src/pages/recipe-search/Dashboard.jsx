@@ -10,7 +10,7 @@ const mockRecipes = [
     { id: 3, name: "Caesar Salad", cuisine: "American", mealType: "Lunch", ingredients: ["lettuce", "croutons", "parmesan", "caesar dressing", "caesar dressing", "caesar dressing", "caesar dressing"] },
 ];
 
-const mockFilters = {
+const Filters = {
     cuisine: ["Italian", "Indian", "American", "Chinese", "Mexican"],
     mealType: ["Breakfast", "Lunch", "Dinner", "Snack"],
     dietaryRestrictions: ["Vegetarian",],
@@ -56,12 +56,12 @@ const Dashboard = () => {
     };
 
     const fetchFilters = async () => {
-        setFilters(mockFilters);
+        setFilters(Filters);
     };
 
     return (
         <div className="container mx-auto px-4 py-8">
-            <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center text-green-500">EpiRecipes</h1>
+            <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center text-brown-500">EpiRecipes</h1>
 
             <div className="mb-8">
                 <SearchBar

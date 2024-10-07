@@ -8,5 +8,6 @@ urlpatterns = [
     path('api/', include('test_app.urls')),
     path('opensearch/', include('opensearch_util.urls')),
     path('',include('accounts.urls')),
+    path('api/recipes/', include('recipes.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

@@ -52,6 +52,9 @@ INSTALLED_APPS = [
 
     # For jwt authentication.
     'rest_framework_simplejwt',
+
+    # This application is used for implementing api endpoints to interact with open search.
+    'recipes',
 ]
 
 AUTH_USER_MODEL = 'custom_user.User'

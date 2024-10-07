@@ -1,5 +1,5 @@
 import React from 'react';
-
+import searchIcon from '../../../assets/icons/search.png'
 const SearchBar = ({ searchTerm, setSearchTerm, onSearch }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,11 +15,10 @@ const SearchBar = ({ searchTerm, setSearchTerm, onSearch }) => {
         onChange={(e) => setSearchTerm(e.target.value)}
         className="w-1/2 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brown-500"
       />
-      <button 
-        type="submit" 
-        className="w-1/2 sm:w-auto px-4 py-2 bg-brown-500 text-white rounded-md hover:bg-brown-600 transition duration-300"
+      <button
+        type="submit"
       >
-        Search
+        <img src={searchIcon} alt="Search" className="h-10 w-10" /> {/* Adjust size as needed */}
       </button>
     </form>
   );

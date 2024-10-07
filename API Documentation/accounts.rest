@@ -36,3 +36,14 @@ Content-Type: application/json
 GET http://127.0.0.1:8000/api/account/user-status/
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI4MjMwMjQ0LCJpYXQiOjE3MjgyMjk4MzIsImp0aSI6ImRmZTFmNTU3NTE4ODQzZWQ5MWU2MDRhNjc2N2ExOGUxIiwidXNlcl9pZCI6NywiaWQiOjcsInJvbGUiOiJhZG1pbiIsImlzX2FjdGl2ZSI6dHJ1ZX0.R_dT3JE6b9gT2c6YywM0hR72r0RBPqhVlL_B7bpO4BU
 Content-Type: application/json
+
+###
+
+PATCH http://127.0.0.1:8000/api/user/update/5/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI4MzAwODQ5LCJpYXQiOjE3MjgyMjk4MzIsImp0aSI6IjMyOTZjNTQ5MDY2ODQ3OTNhMGJiOTdhNjA0YTdhOTQ2IiwidXNlcl9pZCI6NywiaWQiOjcsInJvbGUiOiJhZG1pbiIsImlzX2FjdGl2ZSI6dHJ1ZX0.lR-Hp6x2-Rv0PRdLM9E6tefJapSWuTvhdyAO1gT-b4E
+
+{
+  "first_name": "John",
+  "last_name": "Honai"
+}
