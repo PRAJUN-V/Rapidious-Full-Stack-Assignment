@@ -37,7 +37,12 @@ Frontend
         -> for login page
 - In App.jsx routes related to this application is setup.
 - Login Page implemented.
-
+- npm i react-toastify
+- Created a simple registration page for now and will update later to include otp verification in it.
+- Created a folder named user in pages to manage pages related to users.
+- Created a folder named recipe-search in pages to save all the components related to that.
+- Created Dashboard for searching purpose.
+- Added searching, filteration and recipe card.
 
 Backend
 - Created Virtual Environment named venv to manage all the python packages related to the project.
