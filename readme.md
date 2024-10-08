@@ -1,5 +1,8 @@
 # EpiRecipes Search Platform
 
+## Demo Video
+Watch the walkthrough video demonstrating the application's features and functionalities: [YouTube Video](https://youtu.be/xAqxIKyIGys)
+
 ## Assignment: Recipe Search Application
 
 ### Project Overview
