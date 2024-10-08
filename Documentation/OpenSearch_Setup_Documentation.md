@@ -108,10 +108,4 @@ except Exception as e:
 
 
 
-### Tips for Using Markdown:
 
-- Use headings (`#`, `##`, `###`) to structure the document.
-- Use code blocks (triple backticks) to format code snippets.
-- Consider adding links to external resources or your GitHub repository if necessary.
-
-You can add this Markdown file to your GitHub repository to provide clear and organized documentation for your project.
