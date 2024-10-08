@@ -25,3 +25,8 @@ Content-Type: application/json
 # When Search Query is Provided:
 # GET /api/recipes/search-and-filter/?query=&filters=Dessert,Vegetarian&size=10&page=1
 # Response: Returns recipes belonging to "Dessert" and "Vegetarian" categories without any search query.
+
+###
+# Top 10 best rated recipes
+GET http://localhost:8000/api/recipes/best-rated-recipes/
+Content-Type: application/json

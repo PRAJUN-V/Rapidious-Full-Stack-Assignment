@@ -42,7 +42,10 @@ Frontend
 - Created a folder named user in pages to manage pages related to users.
 - Created a folder named recipe-search in pages to save all the components related to that.
 - Created Dashboard for searching purpose.
-- Added searching, filteration and recipe card
+- Added searching, filteration and recipe card.
+- Created About page.
+- Registration page is re-designed.
+- Profile details updation page completed.
 
 Backend
 - Created Virtual Environment named venv to manage all the python packages related to the project.
@@ -96,6 +99,7 @@ Backend
 - Create Views in recipes/views.py: Implement API endpoints to interact with OpenSearch.
 - Created recipes.rest to test api endpoints.
 - Created a serializer in accounts app for profile details update.
+- Created serializer, view and url for profile details update.
 
 
 

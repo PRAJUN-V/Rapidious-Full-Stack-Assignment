@@ -126,3 +126,27 @@ def search_and_filter_recipes(request):
     }
 
     return JsonResponse(result)
+
+def get_best_rated_recipes(request):
+    size = 10  # Limit to 10 recipes
+
+    body = {
+        "query": {
+            "match_all": {}
+        },
+        "sort": [
+            {"rating": {"order": "desc"}}
+        ],
+        "size": size
+    }
+
+    response = client.search(index='epirecipesdataset', body=body)
+    recipes = response['hits']['hits']
+    total_hits = response['hits']['total']['value']
+
+    result = {
+        "total": total_hits,
+        "recipes": recipes
+    }
+
+    return JsonResponse(result)

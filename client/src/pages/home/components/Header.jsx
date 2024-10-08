@@ -4,6 +4,9 @@ import logo from '../../../assets/images/logo.png';
 import Favorite from '../../../assets/icons/favorite.mp4';
 import Login from '../../../assets/icons/login.mp4';
 import Logout from '../../../assets/icons/logout.mp4';
+import Home from '../../../assets/icons/home.mp4';
+import Recipe from '../../../assets/icons/recipe-book.mp4';
+import About from '../../../assets/icons/information.mp4';
 import { Link, useNavigate } from 'react-router-dom';
 import api from '../../../api'; // Make sure to import your api instance
 import { jwtDecode } from 'jwt-decode';
@@ -106,15 +109,45 @@ function Header() {
                     <img src={logo} alt="Cookify Logo" className="h-20 w-20 rounded-lg" />
                     {/* Full Menu (Visible on Medium Screens and Up) */}
                     <nav className="hidden md:flex items-center space-x-6">
-                        <Link to="/cuisines" className="text-xl font-bold text-[#5B3A29]">Cuisines</Link>
-                        <Link to="/top-rated" className="text-xl font-bold text-[#5B3A29]">Top Rated</Link>
-                        <Link to="/deals" className="text-xl font-bold text-[#5B3A29]">Deals of the Day</Link>
+                        <Link to="/" className="flex items-center py-2 text-xl font-bold text-[#5B3A29]">
+                            <video
+                                src={Home}
+                                className="h-12 w-12"
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                            />
+                            <span className="align-middle ml-2">Home</span>
+                        </Link>
+                        <Link to="/recipes" className="flex items-center py-2 text-xl font-bold text-[#5B3A29]">
+                            <video
+                                src={Recipe}
+                                className="h-12 w-12"
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                            />
+                            <span className="align-middle ml-2">Recipes</span>
+                        </Link>
+                        <Link to="/about" className="flex items-center py-2 text-xl font-bold text-[#5B3A29]">
+                            <video
+                                src={About}
+                                className="h-12 w-12"
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                            />
+                            <span className="align-middle ml-2">About</span>
+                        </Link>
                     </nav>
                 </div>
 
                 {/* Right Side Menu (Cart, Favorite, Login, Logout) */}
                 <div className="hidden md:flex items-center space-x-6">
-                    <Link to="/v1/user/favorite" className="flex items-center py-2 text-xl font-bold text-[#5B3A29]">
+                    <Link to="/favorite" className="flex items-center py-2 text-xl font-bold text-[#5B3A29]">
                         <video
                             src={Favorite}
                             className="h-12 w-12"
@@ -176,9 +209,39 @@ function Header() {
             {/* Dropdown Menu (Visible only when open on small screens) */}
             {isOpen && (
                 <nav className="md:hidden mt-4">
-                    <Link to="/cuisines" className="block py-2 text-xl font-bold text-[#5B3A29]">Cuisines</Link>
-                    <Link to="/top-rated" className="block py-2 text-xl font-bold text-[#5B3A29]">Top Rated</Link>
-                    <Link to="/deals" className="block py-2 text-xl font-bold text-[#5B3A29]">Deals of the Day</Link>
+                    <Link to="/" className="flex items-center py-2 text-xl font-bold text-[#5B3A29]">
+                        <video
+                            src={Home}
+                            className="h-12 w-12"
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                        />
+                        <span className="align-middle ml-2">Home</span>
+                    </Link>
+                    <Link to="/recipes" className="flex items-center py-2 text-xl font-bold text-[#5B3A29]">
+                        <video
+                            src={Recipe}
+                            className="h-12 w-12"
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                        />
+                        <span className="align-middle ml-2">Recipes</span>
+                    </Link>
+                    <Link to="/about" className="flex items-center py-2 text-xl font-bold text-[#5B3A29]">
+                        <video
+                            src={About}
+                            className="h-12 w-12"
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                        />
+                        <span className="align-middle ml-2">About</span>
+                    </Link>
                     <Link to="/v1/user/favorite" className="flex items-center py-2 text-xl font-bold text-[#5B3A29]">
                         <video
                             src={Favorite}

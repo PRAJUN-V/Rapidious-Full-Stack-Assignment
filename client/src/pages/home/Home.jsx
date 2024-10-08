@@ -1,6 +1,5 @@
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Dashboard from "../recipe-search/Dashboard";
 import HeroSection from "./components/HeroSection";
 
 function Home() {
@@ -9,8 +8,8 @@ function Home() {
             <div className="flex flex-col min-h-screen">
                 <Header />
                 <main className="flex-grow">
-                    {/* <HeroSection /> */}
-                    <Dashboard />
+                    <HeroSection />
+                    {/* <Dashboard /> */}
                 </main>
             </div>
             <Footer />

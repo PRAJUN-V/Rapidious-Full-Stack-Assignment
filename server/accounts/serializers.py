@@ -80,3 +80,41 @@ class UserUpdateSerializer(serializers.ModelSerializer):
             Profile.objects.update_or_create(user=instance, defaults=profile_data)
 
         return instance
+    
+
+class UserProfileUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name']
+
+class ProfileUpdateSerializer(serializers.ModelSerializer):
+    user = UserProfileUpdateSerializer()
+
+    class Meta:
+        model = Profile
+        fields = ['id', 'user', 'image', 'role']
+
+    def update(self, instance, validated_data):
+        print("Validated data received:", validated_data)  # Log validated data
+        user_data = validated_data.pop('user', {})
+        print("User data extracted:", user_data)  # Log user data after popping
+        user = instance.user
+        
+        print("User before update:", user)  # Log the user before updating
+        # Update User model fields
+        for attr, value in user_data.items():
+            setattr(user, attr, value)
+        user.save()
+
+        # Update Profile model fields
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
+        instance.save()  # Ensure the profile instance is saved
+
+        return instance
+
+    def to_representation(self, instance):
+        representation = super().to_representation(instance)
+        user_representation = representation.pop('user')
+        representation.update(user_representation)  # Simplified to update representation directly
+        return representation

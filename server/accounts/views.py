@@ -3,7 +3,7 @@ from rest_framework import generics
 from .serializers import UserSerializer
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework_simplejwt.views import TokenObtainPairView
-from .serializers import CustomTokenObtainPairSerializer, UserStatusSerializer, UserUpdateSerializer
+from .serializers import CustomTokenObtainPairSerializer, UserStatusSerializer, UserUpdateSerializer, ProfileUpdateSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import generics, permissions
@@ -60,3 +60,37 @@ class UserUpdateView(generics.GenericAPIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+class ProfileUpdateView(generics.RetrieveUpdateAPIView):
+    serializer_class = ProfileUpdateSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_object(self):
+        return self.request.user.profile
+
+    def patch(self, request, *args, **kwargs):
+        instance = self.get_object()
+
+        # Log incoming data
+        print("Incoming data:", request.data)  # Log the raw request data
+
+        # Extract user data
+        user_first_name = request.data.get('user[first_name]')
+        user_last_name = request.data.get('user[last_name]')
+        user = instance.user
+
+        # Update user fields directly
+        if user_first_name:
+            user.first_name = user_first_name
+        if user_last_name:
+            user.last_name = user_last_name
+        user.save()  # Save the updated user
+
+        # Update profile fields
+        for attr, value in request.data.items():
+            if attr not in ['user[first_name]', 'user[last_name]']:  # Ensure not to overwrite the user data again
+                setattr(instance, attr, value)
+        instance.save()  # Save the updated profile
+
+        # Return the updated profile data
+        return Response(ProfileUpdateSerializer(instance).data)

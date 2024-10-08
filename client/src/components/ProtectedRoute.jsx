@@ -80,7 +80,7 @@ function ProtectedRoute({ children, requiredRole }) {
     };
 
     if (isAuthorized === null) {
-        return <Loading />
+        return <div />
     }
 
     if (isAuthorized && isActive) {

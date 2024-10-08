@@ -38,12 +38,6 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiY
 Content-Type: application/json
 
 ###
-
-PATCH http://127.0.0.1:8000/api/user/update/5/
+GET http://127.0.0.1:8000/api/profile/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI4MzYyNzE3LCJpYXQiOjE3MjgzNjIwNzUsImp0aSI6IjQ5NDFhZTEzYTI1ZTQ4ODFhNDBjY2NhNWQxMTM5NzBiIiwidXNlcl9pZCI6OSwiaWQiOjksInJvbGUiOiJ1c2VyIiwiaXNfYWN0aXZlIjp0cnVlfQ.3tPg5wG-e3kC4vqp5fF3FA4ab-c_G_StaX47VRTCEKA
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI4MzAwODQ5LCJpYXQiOjE3MjgyMjk4MzIsImp0aSI6IjMyOTZjNTQ5MDY2ODQ3OTNhMGJiOTdhNjA0YTdhOTQ2IiwidXNlcl9pZCI6NywiaWQiOjcsInJvbGUiOiJhZG1pbiIsImlzX2FjdGl2ZSI6dHJ1ZX0.lR-Hp6x2-Rv0PRdLM9E6tefJapSWuTvhdyAO1gT-b4E
-
-{
-  "first_name": "John",
-  "last_name": "Honai"
-}
