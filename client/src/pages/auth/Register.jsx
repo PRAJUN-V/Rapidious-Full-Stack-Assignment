@@ -66,7 +66,7 @@ const Register = () => {
             <div className="absolute inset-0 bg-black opacity-30"></div>
 
             <div className="relative z-10 w-full max-w-md bg-white p-8 rounded-lg shadow-lg">
-                <h1 className="text-2xl font-bold text-blue-500 mb-6">Register</h1>
+                <h1 className="text-2xl font-bold text-blue-500 mb-6">EpiRecipes</h1>
                 
                 <form onSubmit={formik.handleSubmit}>
                     <div className="mb-4">

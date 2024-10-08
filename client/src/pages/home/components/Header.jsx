@@ -147,7 +147,7 @@ function Header() {
 
                 {/* Right Side Menu (Cart, Favorite, Login, Logout) */}
                 <div className="hidden md:flex items-center space-x-6">
-                    <Link to="/favorite" className="flex items-center py-2 text-xl font-bold text-[#5B3A29]">
+                    {/* <Link to="/favorite" className="flex items-center py-2 text-xl font-bold text-[#5B3A29]">
                         <video
                             src={Favorite}
                             className="h-12 w-12"
@@ -157,7 +157,7 @@ function Header() {
                             playsInline
                         />
                         <span className="align-middle ml-2">Favourite</span>
-                    </Link>
+                    </Link> */}
 
                     {isAuthenticated ? (
                         <>
@@ -242,7 +242,7 @@ function Header() {
                         />
                         <span className="align-middle ml-2">About</span>
                     </Link>
-                    <Link to="/v1/user/favorite" className="flex items-center py-2 text-xl font-bold text-[#5B3A29]">
+                    {/* <Link to="/v1/user/favorite" className="flex items-center py-2 text-xl font-bold text-[#5B3A29]">
                         <video
                             src={Favorite}
                             className="h-12 w-12"
@@ -252,7 +252,7 @@ function Header() {
                             playsInline
                         />
                         <span className="align-middle ml-2">Favourite</span>
-                    </Link>
+                    </Link> */}
 
                     {isAuthenticated ? (
                         <>

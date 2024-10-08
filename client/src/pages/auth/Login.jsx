@@ -85,7 +85,7 @@ const Login = () => {
 
             <div className="relative z-10 w-full max-w-md bg-white p-8 rounded-lg shadow-lg">
                 {/* Google Sign-in button */}
-                <div className="text-center mb-6">
+                {/* <div className="text-center mb-6">
                     <label className="mr-1 text-lg font-semibold">Sign in with</label>
                     <div className="flex justify-center space-x-2 items-center">
                         <button
@@ -99,13 +99,13 @@ const Login = () => {
                             <span className="text-sm font-bold">Google</span>
                         </button>
                     </div>
-                </div>
+                </div> */}
 
                 {/* Divider */}
-                <div className="my-5 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
+                {/* <div className="my-5 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
                     <p className="mx-4 mb-0 text-center font-semibold text-slate-500">Or</p>
-                </div>
-
+                </div> */}
+                <h1 className="text-2xl font-bold text-blue-500 mb-6">EpiRecipes</h1>
                 {/* Formik for form handling */}
                 <Formik
                     initialValues={{ email: "", password: "" }}
@@ -148,11 +148,11 @@ const Login = () => {
                                 </div>
                             )}
 
-                            <div className="flex justify-between font-semibold text-sm mb-4">
+                            {/* <div className="flex justify-between font-semibold text-sm mb-4">
                                 <a className="text-blue-600 hover:text-blue-700 hover:underline hover:underline-offset-4" href="#">
                                     Forgot Password?
                                 </a>
-                            </div>
+                            </div> */}
 
                             <button
                                 type="submit"

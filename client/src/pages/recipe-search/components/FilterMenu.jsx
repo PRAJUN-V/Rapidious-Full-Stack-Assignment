@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const FilterMenu = ({ filters, activeFilters, setActiveFilters, isFilterMenuOpen, setIsFilterMenuOpen }) => {
+  const [openFilters, setOpenFilters] = useState({});
+
   const handleFilterChange = (filterType, value) => {
     setActiveFilters(prev => {
       const updatedFilters = { ...prev };
@@ -13,6 +15,13 @@ const FilterMenu = ({ filters, activeFilters, setActiveFilters, isFilterMenuOpen
       }
       return updatedFilters;
     });
+  };
+
+  const toggleFilterGroup = (filterType) => {
+    setOpenFilters(prev => ({
+      ...prev,
+      [filterType]: !prev[filterType],
+    }));
   };
 
   return (
@@ -30,18 +39,28 @@ const FilterMenu = ({ filters, activeFilters, setActiveFilters, isFilterMenuOpen
         <div className="mt-2 p-4 bg-white rounded-md shadow-lg absolute z-10 w-1/2">
           {Object.entries(filters).map(([filterType, options]) => (
             <div key={filterType} className="mb-4">
-              <h3 className="font-semibold mb-2">{filterType}</h3>
-              {options.map((option) => (
-                <label key={option} className="flex items-center mb-2">
-                  <input
-                    type="checkbox"
-                    checked={activeFilters[filterType]?.includes(option)}
-                    onChange={() => handleFilterChange(filterType, option)}
-                    className="mr-2"
-                  />
-                  {option}
-                </label>
-              ))}
+              <h3
+                className="font-semibold mb-2 cursor-pointer"
+                onClick={() => toggleFilterGroup(filterType)}
+              >
+                {filterType} {openFilters[filterType] ? '▲' : '▼'}
+              </h3>
+              {/* Show options only if the filter type is open */}
+              {openFilters[filterType] && (
+                <div className="ml-4">
+                  {options.map((option) => (
+                    <label key={option} className="flex items-center mb-2">
+                      <input
+                        type="checkbox"
+                        checked={activeFilters[filterType]?.includes(option)}
+                        onChange={() => handleFilterChange(filterType, option)}
+                        className="mr-2"
+                      />
+                      {option}
+                    </label>
+                  ))}
+                </div>
+              )}
             </div>
           ))}
         </div>

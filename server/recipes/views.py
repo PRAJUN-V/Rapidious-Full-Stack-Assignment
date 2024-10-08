@@ -76,7 +76,7 @@ def get_recipes_by_category(request):
 def search_and_filter_recipes(request):
     query = request.GET.get('query', '')
     filters = request.GET.get('filters', '').split(',')
-    size = int(request.GET.get('size', 10))
+    size = int(request.GET.get('size', 9))
     page = int(request.GET.get('page', 1))
 
     from_ = (page - 1) * size
@@ -128,7 +128,7 @@ def search_and_filter_recipes(request):
     return JsonResponse(result)
 
 def get_best_rated_recipes(request):
-    size = 10  # Limit to 10 recipes
+    size = 3  # Limit to 10 recipes
 
     body = {
         "query": {

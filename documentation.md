@@ -46,6 +46,8 @@ Frontend
 - Created About page.
 - Registration page is re-designed.
 - Profile details updation page completed.
+- Implemented Top 3 recipes in Home.
+- Implemented filter and search recipe on frontend.
 
 Backend
 - Created Virtual Environment named venv to manage all the python packages related to the project.
