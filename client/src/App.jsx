@@ -8,6 +8,7 @@ import NotFoundPage from "./pages/404/404"
 import Search from "./pages/recipe-search/Search"
 import About from "./pages/user/About"
 import Profile from "./pages/user/Profile"
+import RecipeSearch from "./pages/recipe-search/Dashboard"
 
 function Logout() {
   localStorage.clear()

@@ -4,12 +4,12 @@ import recipeIcon from '../../assets/icons/recipe.png'; // Import your icon imag
 import searchIcon from '../../assets/icons/search.png';
 
 const Filters = {
-    Ingredients: ['Chicken', 'Beef', 'Vegetarian', 'Fish', 'Pasta'],
-    Cuisine: ['Italian', 'Chinese', 'Mexican', 'Indian'],
-    'Preparation Time': ['Under 30 minutes', '30-60 minutes', 'Over 60 minutes'],
+    'Ingredients': ['chicken', 'milk', 'oil', 'Fish', 'Pasta'],
+    'Cuisine': ['Italian', 'Chinese', 'Mexican', 'Indian'],
+    'Type': ['Vegetarian', 'Non Vegetarian'],
 };
 
-const Dashboard = () => {
+const RecipeSearch = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [recipes, setRecipes] = useState([]);
     const [filters, setFilters] = useState({});
@@ -241,4 +241,4 @@ const Dashboard = () => {
     );
 };
 
-export default Dashboard;
+export default RecipeSearch;
